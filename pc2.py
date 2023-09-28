@@ -43,3 +43,12 @@ sns.regplot(
 )
 plt.xlabel('PC2')
 plt.ylabel('log10(expression)')
+
+
+gene_dict = {'Axon Guidance (GO:0007411)':'ROBO2,LGI1,SEMA4D,DCC,SEMA3A,NRXN3,CNTN2,EMB,SEMA3F',
+'Neuron Projection Guidance (GO:0097485)':'SEMA3D,LRTM2,SEMA4F,BOC,TNR,SLIT2,EPHA3',
+'Actin-Based Cell Projection (GO:0098858)':'TENM2,GRXCR2,LRRK2,USH1C,CD302,ESPN,MYO1H,CLRN1',
+'Neuron Projection Development (GO:0031175)':'BTG2,RASGRF1,STMN4,BHLHE22,POU4F1,DCLK1'}
+
+for i in gene_dict.keys():
+    gene_dict[i] = [x[0] + x[1:].lower() for x in gene_dict[i].split(',')]
